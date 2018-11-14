@@ -24,26 +24,26 @@ hasil</br></br>
          <img src = "hasil3.PNG"></br>
          Wajah dan mata sudah tidak terdeteksi
       </p>
-<p><b> Kode Program</b></br>
-import cv2
-import numpy as np
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
+<p style="border-style: dashed"><b> Kode Program</b></br>
+import cv2</br>
+import numpy as np </br>
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')</br>
+eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')</br>
 
-img = cv2.imread('test5.jpg')
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-faces = face_cascade.detectMultiScale(gray, 1.3,8)
-for (x,y,w,h) in faces:
-    img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
-    roi_gray = gray[y:y+h, x:x+w]
-    roi_color = img[y:y+h, x:x+w]
-    eyes = eye_cascade.detectMultiScale(roi_gray)
-    for (ex,ey,ew,eh) in eyes:
-        cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
+img = cv2.imread('test5.jpg')</br>
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</br>
+faces = face_cascade.detectMultiScale(gray, 1.3,8)</br>
+for (x,y,w,h) in faces:</br>
+    &nbsp; &nbsp; img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)</br>
+     &nbsp; &nbsp;roi_gray = gray[y:y+h, x:x+w]</br>
+     &nbsp; &nbsp;roi_color = img[y:y+h, x:x+w]</br>
+     &nbsp; &nbsp;eyes = eye_cascade.detectMultiScale(roi_gray)</br>
+     &nbsp; &nbsp;for (ex,ey,ew,eh) in eyes:</br>
+      &nbsp; &nbsp; &nbsp; &nbsp;cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)</br>
 
-cv2.imshow('img',img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+cv2.imshow('img',img)</br>
+cv2.waitKey(0)</br>
+cv2.destroyAllWindows()</br>
 </p>
 
 </body>
