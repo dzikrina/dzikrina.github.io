@@ -1,1 +1,88 @@
+<html>
+<body>
+<h1 style = "text-align : center;"> LAPORAN PRAKTIKUM SISTEM EMBEDDED</h1>
+  <h2 style = "text-align : center;" >MODUL 2/h2>
+<h3 style = "text-align : center;"> Input dan Output Analog>
+  <p><b> NAMA : DZIKRINA HANUM SALSABIELA</b></p>
+  <p><b> NIM : L200160091</p></b><hr>
+  <p> <b>Peralatan yang diperlukan :</b></br>
+  - Board arduino uno</br>
+  - LED</br>
+  - Resistor</br>
+-Breadboard</br>
+- Potensiometer
+ </p>
+  
+<p><b> Tugas :</b></br> 1.Menambahkan 5 buah LED sebagi indikator posisi putaran knop putaran potensiometer</br>
+LED pertama akan menyala jika nilai hasil baca antara 0 sampai dengan 200,LED kedua menyala untuk hasil baca antara 201-400,</br>
+LED ke-3 untuk range nilai antara 401-600, LED ke-4 untuk range nilai 601-800,dan LED ke 5 untuk hasil baca yang lebih dari 800.
+</p>
+  
+  <hr>
+<img src = "oke.jpg" style = "height : 300px; width : 300px;">
+  
+  
+  <h4>Kode Program</h4>
+  <p style = "border-style : solid;">
+    int ledPin1 = 13; </br>
+int ledPin2 = 12;</br>
+int ledPin3 = 11;</br>
+int ledPin4 = 10;</br>
+int ledPin5 = 9;</br>
+int ledPin7 = 7;</br>
+int sensorPin = A0;</br>
+int sensorValue = 0;</br>
+int redupTerang = 0;</br>
+void setup() {</br>
+  // put your setup code here, to run once:</br>
+  pinMode(ledPin1,OUTPUT);</br>
+  pinMode(ledPin2,OUTPUT);</br>
+  pinMode(ledPin3,OUTPUT);</br>
+  pinMode(ledPin4,OUTPUT);</br>
+  pinMode(ledPin5,OUTPUT);</br>
 
+}</br>
+
+void loop() {</br>
+  // put your main code here, to run repeatedly:</br>
+ 
+  sensorValue = analogRead(sensorPin);</br>
+  if(sensorValue > 0 && sensorValue <= 200){</br>
+      digitalWrite(ledPin1,HIGH);</br>
+      digitalWrite(ledPin2,LOW);</br>
+      analogWrite(ledPin7,</br>
+      
+    }</br>
+  else if (sensorValue > 201 && sensorValue <= 400){</br>
+    digitalWrite(ledPin2,HIGH);</br>
+    digitalWrite(ledPin1,LOW);</br>
+      digitalWrite(ledPin3,LOW);</br>
+    }</br>
+  else if (sensorValue > 401 && sensorValue <= 600){</br>
+    digitalWrite(ledPin3,HIGH);</br>
+    digitalWrite(ledPin2,LOW);</br>
+      
+      digitalWrite(ledPin4,LOW);</br>
+          
+    }</br>
+  else if (sensorValue > 601 && sensorValue < 800){</br>
+    digitalWrite(ledPin4,HIGH);</br>
+    
+      digitalWrite(ledPin3,LOW);</br>
+      
+          digitalWrite(ledPin5,LOW);</br>
+    }</br>
+   else if (sensorValue > 800){</br>
+    digitalWrite(ledPin5,HIGH);</br>
+    
+      digitalWrite(ledPin4,LOW);</br>
+          
+    }</br>
+}
+  </p>
+  
+  
+
+
+</body>
+</html>
