@@ -1,0 +1,81 @@
+<html>
+<body>
+<h1 style = "text-align : center;"> LAPORAN PRAKTIKUM SISTEM EMBEDDED</h1>
+  <h2 style = "text-align : center;" >MODUL 4</h2>
+<h3 style = "text-align : center;">MEMBACA SENSOR LDR</h3><hr>
+  <p><b> NAMA : DZIKRINA HANUM SALSABIELA</b></p>
+  <p><b> NIM : L200160091</p></b><hr>
+  <p> <b>Peralatan yang diperlukan :</b></br>
+1. Board Arduino Kit</br>
+2. LDR</br>
+3. Breadboard</br>
+4. LED</br>
+ </p>
+  
+<p><b> Tugas :</b></br> 
+Menggunakan 7-segment sebagai indikator intensitas cahaya sederhana, dengan LDR sebagai sensornya.
+</p>
+  
+  <hr>
+  <video width = 500 height = 500 controls>
+    <source src="VID_20190311_142837.mp4" type="video/mp4">
+  </video>
+  
+  
+  <h4>Kode Program</h4>
+  <p style = "border-style : solid;">
+   int potPin = A0;</br>
+int LEDPin = 9;</br>
+int potValue = 0;</br>
+int LEDValue = 0;</br>
+int val[] = {B11000000,B11111001,B10100100,B10110000,B10011001,B10010010,B10000010,B11111000,B10000000,B10010000};</br>
+
+void setup() {</br>
+  // put your setup code here, to run once:</br>
+  DDRD = B11111111 ;</br>
+ 
+}</br>
+
+void loop() {</br>
+  // put your main code here, to run repeatedly:</br>
+  potValue = analogRead(potPin);</br>
+  LEDValue =    potValue;</br>
+  if(LEDValue > 0 && LEDValue < 100){</br>
+    PORTD = val[0];</br>
+  }</br>
+  else if(LEDValue > 101 && LEDValue < 200){</br>
+    PORTD = val[1];</br>
+  }</br>
+  else if(LEDValue > 201 && LEDValue < 300){</br>
+    PORTD = val[2];</br>
+  }</br>
+  else if(LEDValue > 301 && LEDValue < 400){</br>
+    PORTD = val[3];</br>
+  }</br>
+  else if(LEDValue > 401 && LEDValue < 500){</br>
+    PORTD = val[4];</br>
+  }</br>
+  else if(LEDValue > 501 && LEDValue < 600){</br>
+    PORTD = val[5];</br>
+  }</br>
+  else if(LEDValue > 601 && LEDValue < 700){</br>
+    PORTD = val[6];</br>
+  }</br>
+  else if(LEDValue > 701 && LEDValue < 800){</br>
+    PORTD = val[7];</br>
+  }</br>
+  else if(LEDValue > 801 && LEDValue < 900){</br>
+    PORTD = val[8];</br>
+  }</br>
+  else if(LEDValue > 901 && LEDValue < 1000){</br>
+    PORTD = val[9];</br>
+  }</br>
+
+}</br>
+  </p>
+  
+  
+
+
+</body>
+</html>
